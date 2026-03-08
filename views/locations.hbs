@@ -1,0 +1,31 @@
+{{> menu}}
+
+<section class="ui segment center aligned">
+  <h1>Explore Theatre Locations</h1>
+  <p>Select a region to discover theatrical productions</p>
+
+  <div class="ui two column stackable grid centered">
+    <div class="column">
+      <a href="/region/dublin" class="location-link">
+        <div class="location-card">
+          <img src="/images/ireland.png" alt="Dublin" class="location-flag">
+          <h2>Dublin</h2>
+          <p>Ireland</p>
+        </div>
+      </a>
+    </div>
+
+    <!--Here I am calling the allert, so when the user clicks on the UK flag, it will display a warning-->
+    <div class="column">
+      <a href="/region/london" class="location-link" onclick="alert('The Phantom of the Opera is celebrating its 40th year. It is definitely worth having a look!')">
+        <div class="location-card">
+          <img src="/images/uk.png" alt="London" class="location-flag">
+          <h2>London</h2>
+          <p>United Kingdom</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

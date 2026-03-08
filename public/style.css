@@ -1,0 +1,272 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  margin: 0em;
+  background-color: #f5f5f5;
+  height: 100%;
+}
+
+h1, h2, h3, a, .ui.header {
+  font-family: "Cinzel", serif !important;
+}
+
+/* UI segment design */
+.ui.segment{
+  border-radius: 0 !important;
+}
+
+a:hover {
+  color: #d4a017;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer.ui.segment {
+  margin: 0 !important;
+  margin-top: auto !important;
+  border-radius: 0 !important;
+  width: 100%;
+  background-color: #2f3b3f;
+  color: white;
+}
+
+.ui.menu {
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  background-color: #2f3b3f !important;
+}
+
+.ui.menu .item,
+.ui.menu .header a {
+  color: white !important;
+}
+
+.ui.menu .item:hover {
+  color: #cf6a53 !important;
+}
+
+
+.production-card.highlight-gold {
+  border: 4px solid gold !important;
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.35) !important;
+  transform: translateY(-4px);
+}
+
+.ui.card.production-card {
+  overflow: visible !important;
+  border-radius: 12px !important;
+}
+
+/* Hero design */
+.hero {
+  background: linear-gradient(90deg, #cf6a53, #b8514d);
+  padding: 4rem 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn-light {
+  background-color: #ffffff !important;
+  border: 2px solid white !important;
+  color: #b8514d !important;
+  border-radius: 12px !important;
+}
+
+/* Some effect to make the website more interactive */
+.hero-btn-light:hover {
+  background: #f8f4f2 !important;
+  color: #9f433d !important;
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+
+/* Featured productions title design */
+.featured-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 2.5rem 0 1.5rem;
+}
+
+/* Carousel design */
+.carousel-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.carousel {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 1rem 0.25rem 2rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.carousel-card {
+  position: relative;
+  min-width: 320px;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+
+.carousel-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #cf6a53;
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.carousel-body {
+  padding: 1rem 1rem 1.25rem;
+}
+
+.carousel-body h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.3rem;
+}
+
+.carousel-body p {
+  margin: 0;
+  color: rgba(0,0,0,0.6);
+  font-weight: 600;
+}
+
+.carousel-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Carousel's arrows design */
+.carousel-arrow {
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  font-size: 28px;
+  line-height: 44px;
+  cursor: pointer;
+}
+
+.carousel-arrow:hover {
+  transform: translateY(-1px);
+}
+
+/* Gold Highlight (for Phantom on London region page) */
+.ui.cards .card,
+.ui.three.cards .card {
+  width: 240px !important;
+  min-height: auto !important;
+}
+
+.ui.card .image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.production-card {
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.ui.menu .header.item a {
+  color: #cf6a53 !important;
+}
+
+.location-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.location-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  max-width: 420px;
+  margin: 0 auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.location-flag {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.25rem;
+  border-radius: 999px;
+}
+
+.location-card h2 {
+  margin-bottom: 0.35rem;
+}
+
+.location-card p {
+  margin: 0;
+  color: #6b7280;
+}

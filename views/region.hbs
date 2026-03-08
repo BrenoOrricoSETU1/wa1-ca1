@@ -1,0 +1,31 @@
+{{> menu}}
+
+<section class="ui segment">
+  <h2 class="ui centered header">{{regionName}} Productions</h2>
+
+  <div class="ui centered three stackable cards">
+
+    <!-- For each method, like in Java, it will going through all the production in productions and display them-->
+    {{#each productions}}
+    <!-- If conditions, if that's the production to be highlighted it will be a golden border, if not, it will be displayed normal-->
+      <div class="ui card production-card {{#if highlight}}highlight-gold{{/if}}">
+        <div class="image">
+          <img src="{{image}}" alt="{{title}}">
+        </div>
+
+        <div class="content">
+          <div class="header">{{title}}</div>
+          <div class="meta">{{venue}}</div>
+          <div class="description">{{description}}</div>
+
+        </div>
+          <div class="extra content">
+            <i class="genre"></i>
+            {{genre}}
+        </div>  
+      </div>
+    {{/each}}
+  </div>
+</section>
+
+{{> footer}}

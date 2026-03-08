@@ -1,0 +1,30 @@
+<!-- Here is a reusable template component, which is the menu, and I am telling the handlebars to take this template and insert it here. The logic of Do not repeat yourself. Inseate of crtl c crtl v the menu in all my pages, I can just call through the handlebar-->
+{{> menu}}
+
+<section class="ui segment">
+  <h2 class="ui header">{{info.appName}}</h2>
+<hr>
+<div class="ui two column grid">
+  <div class="column">
+    <p><strong>Created by:</strong> {{info.authorName}}</p>
+  </div>
+  <div class="column">
+    <p><strong>Module:</strong> {{info.module}}</p>
+  </div>
+  <div class="column">
+    <p><strong>College:</strong> {{info.college}}</p>
+  </div>
+  <div class="column">
+    <p><strong>Version:</strong> {{info.version}}</p>
+  </div>
+</div>
+<hr>
+  <h3 class="ui header">Location</h3>
+
+  <div class="ui embed">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.8084529986168!2d-7.142301123409774!3d52.24686275641607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842c41310dd4131%3A0x4042f0dcf13f7cfe!2sSouth%20East%20Technological%20University%20%7C%20Waterford%20(SETU)!5e0!3m2!1sen!2sie!4v1772989805970!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<!-- Same thing as the menu-->
+{{> footer}}

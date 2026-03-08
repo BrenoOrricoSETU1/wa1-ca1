@@ -1,0 +1,46 @@
+{{> menu}}
+
+<!-- Hero "image" for my website, I did put an image in the begining but it was far too many information pop up in my face, so I decided to remove, and just leave a colour, with the text and a button. Probably the next version will be more functionalities for the web page-->
+<section class="hero">
+
+  <div class="hero-inner">
+    <h1 class="hero-title">Welcome to Stage Haven</h1>
+    <p class="hero-subtitle">
+      This web application is to showcase theatre productions from two major theatre regions in the UK and Ireland, London and Dublin. It allows users to explore different shows, view details about each production, and discover where they are performed.
+    </p>
+
+    <div class="hero-actions">
+      <a class="ui large button basic hero-btn-light" href="/locations">Explore Locations</a>
+    </div>
+  </div>
+</section>
+
+<section class="ui container" id="featured">
+  <h2 class="featured-title">Featured Productions</h2>
+
+<!-- That's the carousel, to display cards contaning the featured productions -->
+  <div class="carousel-wrap">
+    <button class="carousel-arrow left" aria-label="Scroll left" type="button">‹</button>
+
+    <div class="carousel" id="featuredCarousel">
+      {{#each productions}}
+        <a href="/locations" class="carousel-link">
+          <div class="carousel-card">
+            <div class="carousel-image" style="background-image:url('{{image}}');"></div>
+            <span class="carousel-tag">{{genre}}</span>
+
+            <div class="carousel-body">
+              <h3>{{title}}</h3>
+              <p>{{location}}</p>
+            </div>
+          </div>
+        </a>
+      {{/each}}
+
+    </div>
+    <button class="carousel-arrow right" aria-label="Scroll right" type="button">›</button>
+  </div>
+
+</section>
+
+{{> footer}}
