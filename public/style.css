@@ -270,3 +270,7 @@ footer.ui.segment {
   margin: 0;
   color: #6b7280;
 }
+
+table {
+  margin: auto;
+}

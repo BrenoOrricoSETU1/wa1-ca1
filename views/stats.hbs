@@ -1,0 +1,111 @@
+{{> menu id="stats"}}
+
+<section class="ui center aligned segment">
+
+  <h2>Theatre Statistics</h2>
+
+  {{#with stats}}
+
+  <div class="ui center aligned grid">
+
+    <!-- First half of statistics -->
+    <div class="sixteen wide column">
+      <div class="ui three statistics">
+
+        <div class="ui statistic">
+          <div class="value">
+            <i class="map marker alternate icon"></i>
+          </div>
+          <div class="label">
+            {{displayNumRegions}} Regions
+          </div>
+        </div>
+
+        <div class="ui red statistic">
+          <div class="value">
+            <i class="ticket icon"></i>
+          </div>
+          <div class="label">
+            {{displayNumProductions}} Productions
+          </div>
+        </div>
+
+        <div class="ui blue statistic">
+          <div class="value">
+            <i class="chart bar icon"></i>
+          </div>
+          <div class="label">
+            Avg productions per region: {{displayAverage}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Second half of statistics -->
+    <div class="sixteen wide column">
+      <div class="ui four statistics">
+
+        <!-- Highest Rated -->
+        <div class="ui yellow statistic">
+          <div class="value">
+            <i class="star icon"></i>
+          </div>
+          <div class="label">
+            Highest Rated: {{highest}}
+            <br>
+            <div class="ui list">
+              {{#each displayFav}}
+                <div class="item">{{this}}</div>
+              {{/each}}
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Average Rating -->
+        <div class="ui green statistic">
+          <div class="value">
+            <i class="chartline icon"></i>
+          </div>
+          <div class="label">
+            Average Rating: {{displayAvgRating}}
+          </div>
+        </div>
+
+        <!-- Most Productions -->
+        <div class="ui purple statistic">
+          <div class="value">
+            <i class="theater masks icon"></i>
+          </div>
+          <div class="label">
+            Most Productions in a Region: {{maxProductions}}
+          </div>
+        </div>
+
+        <!-- Top Regions -->
+        <div class="ui teal statistic">
+          <div class="value">
+            <i class="globe europe icon"></i>
+          </div>
+          <div class="label">
+            Top Region(s):
+            <div class="ui list">
+              {{#each topRegions}}
+                <div class="item">{{this}}</div>
+              {{/each}}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  {{/with}}
+
+</section>
+
+{{> footer}}

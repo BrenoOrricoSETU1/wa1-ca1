@@ -4,7 +4,9 @@
 'use strict';
 
 import logger from "../utils/logger.js";
-import appStore from "../models/app-store.js"
+import appStore from "../models/app-store.js";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const locations = {
     createView(request, response){

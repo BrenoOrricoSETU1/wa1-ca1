@@ -4,6 +4,7 @@
 import logger from "../utils/logger.js";
 import appStore from "../models/app-store.js";
 import theatreStore from "../models/theatre-store.js";
+import { v4 as uuidv4 } from 'uuid';
 
 const region = {
   createView(request, response) {
@@ -25,14 +26,58 @@ const region = {
 
     const viewData = {
       title: regionData.name,
-      id: "locations",
       info: appStore.getAppInfo(),
-      regionName: regionData.name,
-      productions: productions
+      region: regionData
     };
 
     response.render("region", viewData);
-  }
+  },
+
+  addProduction(request, response){
+    const regionId = request.params.id;
+    const region = theatreStore.getRegionById(regionId);
+    const timestamp = new Date();
+    const newProduction = {
+      id: uuidv4(),
+      title: request.body.title,
+      venue: request.body.venue,
+      description: request.body.description,
+      genre: request.body.genre,
+      image: request.body.image,
+      date: timestamp,
+      rating: parseInt(request.body.rating)
+    };
+    theatreStore.addProduction(regionId, newProduction);
+    response.redirect('/region/' + regionId);
+  },
+
+  deleteProduction(request, response){
+    const regionId = request.params.id;
+    const productionId = request.params.productionid;
+    theatreStore.deleteProduction(regionId, productionId);
+
+    response.redirect('/region/' + regionId);
+  },
+
+  updateProduction(request, response){
+    const regionId = request.params.id;
+    const productionId = request
+    .params.productionid;
+
+    const uptadedProduction = {
+      id: productionId,
+      title: request.body.title,
+      venue: request.body.venue,
+      description: request.body.description,
+      genre: request.body.genre,
+      image: request.body.image,
+      date: request.body.date,
+      rating: parseInt(request.body.rating) || 0
+    };
+
+    theatreStore.editProduction(regionId, productionId, uptadedProduction);
+    response.redirect('/region/' + regionId);
+  },
 };
 
 export default region;

@@ -1,0 +1,44 @@
+<form class="ui stacked segment form" action="/region/{{id}}/addproduction" method="POST" enctype="multipart/form-data">
+  
+  <div class="two fields">
+    
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="title" required placeholder="Show Title">
+    </div>
+
+    <div class="field">
+      <label>Venue</label>
+      <input type="text" name="venue" required placeholder="Theatre Venue">
+    </div>
+
+  </div>
+
+  <div class="field">
+    <label>Description</label>
+    <input type="text" name="description" required placeholder="Short description" maxlength="350">
+  </div>
+
+  <div class="three fields">
+
+  <div class="field">
+    <label>Genre</label>
+    <input type="text" name="genre" placeholder="Musical/ Drama/ Other">
+  </div>
+
+
+  <div class="field">
+    <label>Image</label>
+    <input placeholder="images/uk.png" type="text" name="image">
+  </div>
+
+  <div>
+    <label>Rating (1-5)</label>
+    <input type="range" name="rating" min="1" max="5" placeholder="Enter rating" required>
+  </div>
+
+   </div>
+
+  <button class="ui orange submit button">Add Production</button>
+
+</form>

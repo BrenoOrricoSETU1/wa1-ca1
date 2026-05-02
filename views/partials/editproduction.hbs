@@ -1,0 +1,25 @@
+<div class="ui card production-card hide">
+
+  <form method="POST" action="/region/{{regionId}}/updateproduction/{{id}}">
+
+    <div class="content">
+      <input type="text" name="title" value="{{title}}" required>
+      <input type="text" name="venue" value="{{venue}}" required>
+      <input type="text" name="description" value="{{description}}" required>
+      <input type="text" name="genre" value="{{genre}}">
+      <input type="text" name="image" value="{{image}}">
+    </div>
+
+    <div class="extra content">
+      <button type="reset" class="editSubmit">
+        <i class="ui undo icon"></i>
+      </button>
+
+      <button type="submit" class="editSubmit">
+        <i class="ui save icon"></i>
+      </button>
+    </div>
+
+  </form>
+
+</div>

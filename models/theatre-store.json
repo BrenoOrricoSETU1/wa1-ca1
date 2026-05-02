@@ -1,134 +1,160 @@
 {
-    "regions": [
+  "regions": [
+    {
+      "id": "london",
+      "name": "London",
+      "productions": [
         {
-            "id": "london",
-            "name": "London",
-            "productions": [
-                {
-                    "id": "lesmis",
-                    "title": "Les Misérables",
-                    "genre": "Musical",
-                    "location": "London",
-                    "venue": "Sondheim Theatre",
-                    "description": "A sweeping epic of love, sacrifice, and redemption set against the turmoil of revolutionary France.",
-                    "image": "/images/les-mis.png"
-                },
-                {
-                    "id": "phantom",
-                    "title": "The Phantom of the Opera",
-                    "genre": "Musical",
-                    "location": "London",
-                    "venue": "His Majesty's Theatre",
-                    "description": "A haunting tale of passion, mystery, and obsession unfolds beneath the Paris Opera House. With its iconic music and breathtaking spectacle, The Phantom of the Opera remains one of the most mesmerizing musicals ever staged.",
-                    "image": "/images/phantom.png"            
-                },
-                {
-                    "id": "strangerthings",
-                    "title": "Stranger Things, the First Shadow",
-                    "genre": "Drama",
-                    "location":"London",
-                    "venue": "Phoenix Theatre",
-                    "description": "A journey back to Hawkins before the world turned upside down. This gripping stage prequel to the hit series reveals the origins of the darkness, blending supernatural mystery, cinematic spectacle, and thrilling storytelling.",
-                    "image": "/images/stranger-things.png"                             
-                },
-                {
-                    "id": "harrypotter",
-                    "title": "Harry Potter, and the Cursed Child",
-                    "genre": "Drama",
-                    "location":"London",
-                    "venue": "Palace Theatre",
-                    "description": "Return to the wizarding world in an extraordinary theatrical adventure that continues Harry Potter's story. With breathtaking stage magic and a powerful new tale of friendship, legacy, and destiny, The Cursed Child is a spellbinding experience for fans and newcomers alike.",
-                    "image": "/images/harry-potter-cursed-child.png"                      
-                },
-                {
-                    "id": "wicked",
-                    "title": "Wicked",
-                    "genre": "Musical",
-                    "location":"London",
-                    "venue": "Apollo Victoria Theatre",
-                    "description": "Discover the untold story of the witches of Oz in this dazzling, award-winning musical. With unforgettable songs and a powerful story of friendship and identity, Wicked reveals how two unlikely friends became the Wicked Witch of the West and Glinda the Good.",
-                    "image": "/images/wicked.png"                      
-                }
-            ]
+          "id": "lesmis",
+          "title": "Les Misérables",
+          "date": "1985-10-08",
+          "rating": 5,
+          "venue": "Sondheim Theatre",
+          "description": "A sweeping epic of love, sacrifice, and redemption set against the turmoil of revolutionary France.",
+          "genre": "Musical",
+          "image": "/images/les-mis.png"
         },
         {
-            "id": "dublin",
-            "name": "Dublin",
-            "productions":[
-                {
-                    "id": "oklahoma",
-                    "title": "Oklahoma",
-                    "genre": "Musical",
-                    "location": "Dublin",
-                    "venue": "Bord Gáis Energy Theatre",
-                    "description": "A vibrant celebration of love, community, and the pioneering spirit of the American frontier. Filled with unforgettable songs and lively storytelling, Oklahoma! is a joyful classic that continues to charm audiences around the world.",
-                    "image": "/images/oklahoma-dublin.png"                         
-                },
-                {
-                    "id": "bloodbrothers",
-                    "title": "Blood Brothers",
-                    "genre": "Musical",
-                    "location": "Dublin",
-                    "venue": "Bord Gáis Energy Theatre",
-                    "description": "A powerful and emotional musical that tells the tragic story of twins separated at birth and raised in completely different worlds. Filled with unforgettable songs and gripping drama, Blood Brothers explores fate, class, and the bonds that can never truly be broken.",
-                    "image": "/images/blood-brothers-dublin.png"                                   
-                },
-                {
-                    "id": "waitress",
-                    "title": "The Waitress",
-                    "venue": "Bord Gáis Energy Theatre",
-                    "genre": "Musical",
-                    "location": "Dublin",                    
-                    "description": "A heartfelt musical about dreams, friendship, and finding the courage to start again. Featuring a beautiful score by Sara Bareilles, Waitress follows a talented pie-maker searching for a fresh start and a slice of happiness.",
-                    "image": "/images/waitress-dublin.png"                            
-                },
-                {
-                    "id" : "priscilla",
-                    "title": "Priscilla",
-                    "venue": "Bord Gáis Energy Theatre",
-                    "genre": "Musical",
-                    "location": "Dublin",                       
-                    "description": "A dazzling, high-energy musical adventure about friendship, identity, and self-expression. Packed with iconic pop hits, outrageous costumes, and spectacular performances, Priscilla is a joyful celebration that will have audiences dancing in their seats.",
-                    "image": "/images/priscilla-dublin.png"                       
-                }
-            ]
+          "id": "phantom",
+          "title": "The Phantom of the Opera",
+          "date": "1986-10-09",
+          "rating": 5,
+          "venue": "His Majesty's Theatre",
+          "description": "A haunting tale of passion, mystery, and obsession unfolds beneath the Paris Opera House. With its iconic music and breathtaking spectacle, The Phantom of the Opera remains one of the most mesmerizing musicals ever staged.",
+          "genre": "Musical",
+          "image": "/images/phantom.png"
+        },
+        {
+          "id": "strangerthings",
+          "title": "Stranger Things, the First Shadow",
+          "rating": 4,
+          "date": "2023-12-17",
+          "genre": "Drama",
+          "location": "London",
+          "venue": "Phoenix Theatre",
+          "description": "A journey back to Hawkins before the world turned upside down. This gripping stage prequel to the hit series reveals the origins of the darkness, blending supernatural mystery, cinematic spectacle, and thrilling storytelling.",
+          "image": "/images/stranger-things.png"
+        },
+        {
+          "id": "harrypotter",
+          "title": "Harry Potter, and the Cursed Child",
+          "date": "2016-07-30",
+          "rating": 4,
+          "genre": "Drama",
+          "location": "London",
+          "venue": "Palace Theatre",
+          "description": "Return to the wizarding world in an extraordinary theatrical adventure that continues Harry Potter's story. With breathtaking stage magic and a powerful new tale of friendship, legacy, and destiny, The Cursed Child is a spellbinding experience for fans and newcomers alike.",
+          "image": "/images/harry-potter-cursed-child.png"
+        },
+        {
+          "id": "wicked",
+          "title": "Wicked",
+          "date": "2006-09-27",
+          "rating": 5,
+          "genre": "Musical",
+          "location": "London",
+          "venue": "Apollo Victoria Theatre",
+          "description": "Discover the untold story of the witches of Oz in this dazzling, award-winning musical. With unforgettable songs and a powerful story of friendship and identity, Wicked reveals how two unlikely friends became the Wicked Witch of the West and Glinda the Good.",
+          "image": "/images/wicked.png"
         }
-    ],
-    "featured": [
+      ]
+    },
+    {
+      "id": "dublin",
+      "name": "Dublin",
+      "productions": [
         {
-            "id": "lesmis",
-            "title": "Les Misérables",
-            "genre": "Musical",
-            "location": "London",
-            "image": "/images/les-mis-featured.png"            
+          "id": "oklahoma",
+          "title": "Oklahoma",
+          "date": "2024-03-01",
+          "rating": 4,
+          "genre": "Musical",
+          "location": "Dublin",
+          "venue": "Bord Gáis Energy Theatre",
+          "description": "A vibrant celebration of love, community, and the pioneering spirit of the American frontier. Filled with unforgettable songs and lively storytelling, Oklahoma! is a joyful classic that continues to charm audiences around the world.",
+          "image": "/images/oklahoma-dublin.png"
         },
         {
-            "id": "phantom",
-            "title": "The Phantom of the Opera",
-            "genre": "Musical",
-            "location": "London",
-            "image": "/images/phantom-featured.png"       
+          "id": "bloodbrothers",
+          "title": "Blood Brothers",
+          "date": "2024-04-15",
+          "rating": 3,
+          "genre": "Musical",
+          "location": "Dublin",
+          "venue": "Bord Gáis Energy Theatre",
+          "description": "A powerful and emotional musical that tells the tragic story of twins separated at birth and raised in completely different worlds. Filled with unforgettable songs and gripping drama, Blood Brothers explores fate, class, and the bonds that can never truly be broken.",
+          "image": "/images/blood-brothers-dublin.png"
         },
         {
-            "id": "bloodbrothers",
-            "title":"Blood Brothers",
-            "genre": "Musical",
-            "location": "Dublin",
-            "image": "/images/blood-brothers-featured.png"
+          "id": "waitress",
+          "title": "The Waitress",
+          "date": "2024-05-10",
+          "rating": 4,
+          "venue": "Bord Gáis Energy Theatre",
+          "genre": "Musical",
+          "location": "Dublin",
+          "description": "A heartfelt musical about dreams, friendship, and finding the courage to start again. Featuring a beautiful score by Sara Bareilles, Waitress follows a talented pie-maker searching for a fresh start and a slice of happiness.",
+          "image": "/images/waitress-dublin.png"
         },
         {
-            "id": "strangerthings",
-            "title":"Stranger Things, the First Shadow",
-            "genre": "Drama",
-            "location": "London",
-            "image": "/images/stranger-things-featured.png"
+          "id": "priscilla",
+          "title": "Priscilla",
+          "date": "2024-06-20",
+          "rating": 3,
+          "venue": "Bord Gáis Energy Theatre",
+          "genre": "Musical",
+          "location": "Dublin",
+          "description": "A dazzling, high-energy musical adventure about friendship, identity, and self-expression. Packed with iconic pop hits, outrageous costumes, and spectacular performances, Priscilla is a joyful celebration that will have audiences dancing in their seats.",
+          "image": "/images/priscilla-dublin.png"
         },
         {
-            "id":"waitress",
-            "title": "The Waitress",
-            "genre": "Musical",
-            "location": "Dublin",
-            "image": "/images/waitress-featured.png"
+          "id": "953aaa2c-383e-421a-854f-829ce1f064a0",
+          "title": "testing the tes",
+          "venue": "test",
+          "description": "test",
+          "genre": "test",
+          "image": "test",
+          "date": "2026-04-15",
+          "rating": 5
         }
-    ]
+      ]
+    }
+  ],
+  "featured": [
+    {
+      "id": "lesmis",
+      "title": "Les Misérables",
+      "genre": "Musical",
+      "location": "London",
+      "image": "/images/les-mis-featured.png"
+    },
+    {
+      "id": "phantom",
+      "title": "The Phantom of the Opera",
+      "genre": "Musical",
+      "location": "London",
+      "image": "/images/phantom-featured.png"
+    },
+    {
+      "id": "bloodbrothers",
+      "title": "Blood Brothers",
+      "genre": "Musical",
+      "location": "Dublin",
+      "image": "/images/blood-brothers-featured.png"
+    },
+    {
+      "id": "strangerthings",
+      "title": "Stranger Things, the First Shadow",
+      "genre": "Drama",
+      "location": "London",
+      "image": "/images/stranger-things-featured.png"
+    },
+    {
+      "id": "waitress",
+      "title": "The Waitress",
+      "genre": "Musical",
+      "location": "Dublin",
+      "image": "/images/waitress-featured.png"
+    }
+  ]
 }

@@ -1,12 +1,15 @@
 {{> menu}}
 
+{{#with region}}
+
 <section class="ui segment">
-  <h2 class="ui centered header">{{regionName}} Productions</h2>
+  <h2 class="ui centered header">{{name}} Productions</h2>
 
   <div class="ui centered three stackable cards">
 
     <!-- For each method, like in Java, it will going through all the production in productions and display them-->
     {{#each productions}}
+
     <!-- If conditions, if that's the production to be highlighted it will be a golden border, if not, it will be displayed normal-->
       <div class="ui card production-card {{#if highlight}}highlight-gold{{/if}}">
         <div class="image">
@@ -14,18 +17,89 @@
         </div>
 
         <div class="content">
-          <div class="header">{{title}}</div>
+          <div class="header">{{uppercase title}}</div>
           <div class="meta">{{venue}}</div>
-          <div class="description">{{description}}</div>
-
+          <div class="description">{{description}}
+          </div>
         </div>
-          <div class="extra content">
-            <i class="genre"></i>
-            {{genre}}
-        </div>  
+        <div>
+          <i class="calendar alternate outline icon"></i>
+          {{#if date}}
+            <i>{{formatDate date}}</i>
+          {{/if}}
+        </div>
+
+        {{#if rating}}
+        <div class="extra content">
+          <span
+            class="ui yellow disabled rating"
+            data-icon="star"
+            data-rating="{{rating}}"
+            data-max-rating="5"
+          ></span>
+          <br>
+          <span style="color: grey; font-size: 90%; font-style: italic">
+                {{highlightPopular rating}}
+          </span>  
+        </div>
+        {{/if}}
+
+        <div class="extra content">
+          {{genre}}
+        </div>
+          
+
+        <div class="extra content">
+          <a href="/region/{{../id}}/deleteproduction/{{id}}" title="Delete">
+          <i class="ui grey trash icon"></i>
+          </a>
+        </div>
+
+        <div class="extra content edit-mode hide">
+
+        <!-- Edit buttom (that will be only available for the ADM soon) -->
+        <button onclick="this.nextElementSibling.style.display='block'" class="ui tiny button">
+          Edit
+        </button>
+
+        <!-- Hidden edit form -->
+        <form 
+          action="/region/{{../id}}/updateproduction/{{id}}" 
+          method="POST"
+          style="display:none; margin-top: 10px;"
+        >
+
+          <label>Title</label>
+          <input type="text" name="title" value="{{title}}" placeholder="Title" required>
+          <label>Venue</label>
+          <input type="text" name="venue" value="{{venue}}" placeholder="Venue" required>
+          <label>Description</label>
+          <input type="text" name="description" value="{{description}}" placeholder="Description" required>
+          <label>Genre</label>
+          <input type="text" name="genre" value="{{genre}}" placeholder="Genre">
+          <label>Image</label>
+          <input type="text" name="image" value="{{image}}" placeholder="Image URL">
+          <label>Date</label>
+          <input type="date" name="date" value="{{date}}">
+          <label>Rating</label>
+          <input type="numer" name="rating" min="1" max="5" value="{{rating}}">
+
+          <button type="submit" class="ui mini button">Save</button>
+
+        </form>
+      
       </div>
+
+      </div>
+
     {{/each}}
   </div>
 </section>
+
+<section class="ui center aligned segment">
+  {{> addproduction id=this.id}}
+</section>
+
+{{/with}}
 
 {{> footer}}

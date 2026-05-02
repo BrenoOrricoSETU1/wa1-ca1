@@ -33,3 +33,26 @@ function showLondonMessage(event) {
 
   window.location.href = "/region/london";
 }
+
+//Activating rating option
+$('.ui.rating').rating();
+
+function toggleEdit(button) {
+  const card = button.closest('.ui.card');
+
+  const display = card.querySelector('.display-mode');
+  const edit = card.querySelector('.edit-mode');
+
+  display.classList.toggle('hide');
+  edit.classList.toggle('hide');
+}
+
+function toggleEdit(button) {
+  const card = button.closest('.ui.card');
+
+  const display = card.querySelector('.display-mode');
+  const edit = card.querySelector('.edit-mode');
+
+  display.classList.toggle('hide');
+  edit.classList.toggle('hide');
+}

@@ -10,7 +10,7 @@ const start = {
     logger.info("Start page loading!");
     
     const viewData = {
-      title: "Stage Scape",
+      title: "Stage Haven",
       id: "home",
       info: appStore.getAppInfo(),
       productions: theatreStore.getFeatured()
