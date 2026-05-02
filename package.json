@@ -1,6 +1,9 @@
 {
   "name": "ca1-app",
   "version": "1.0.0",
+  "engines":{
+    "node": ">=22.22.2"
+  },
   "description": "CA1 starter app",
   "type": "module",
   "main": "server.js",
