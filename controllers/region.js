@@ -5,9 +5,15 @@ import logger from "../utils/logger.js";
 import appStore from "../models/app-store.js";
 import theatreStore from "../models/theatre-store.js";
 import { v4 as uuidv4 } from 'uuid';
+import accounts from "./accounts.js";
 
 const region = {
   createView(request, response) {
+
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    if(loggedInUser){
+
     const regionId = request.params.id;
     const searchTerm = request.query.searchTerm || "";
     logger.info(`Region page loading: ${regionId}`);
@@ -52,13 +58,15 @@ const region = {
     const viewData = {
       title: regionData.name,
       info: appStore.getAppInfo(),
+      fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
+      isAdmin: loggedInUser.isAdmin,
       region: {
         id: regionData.id,
         name: regionData.name,
         productions: sortField ? sorted : productions
       },
       search: searchTerm,
-      
+
       titleSelected: request.query.sort === "title",
       ratingSelected: request.query.sort === "rating",
       ascSelected: request.query.order === "asc",
@@ -66,9 +74,19 @@ const region = {
     };
 
     response.render("region", viewData);
+   } else{
+    response.redirect('/');
+   }
   },
 
+  //Only ADMIN can add/remove production
   addProduction(request, response){
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    if(!loggedInUser || !loggedInUser.isAdmin){
+      return response.redirect('/');
+    } else{
+
     const regionId = request.params.id;
     const region = theatreStore.getRegionById(regionId);
     const timestamp = new Date();
@@ -84,17 +102,30 @@ const region = {
     };
     theatreStore.addProduction(regionId, newProduction);
     response.redirect('/region/' + regionId);
+    }
   },
 
   deleteProduction(request, response){
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    if(!loggedInUser || !loggedInUser.isAdmin){
+      return response.redirect('/');
+    } else{
     const regionId = request.params.id;
     const productionId = request.params.productionid;
     theatreStore.deleteProduction(regionId, productionId);
 
     response.redirect('/region/' + regionId);
+    }
   },
 
   updateProduction(request, response){
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    if(!loggedInUser || !loggedInUser.isAdmin){
+      return response.redirect('/');
+    } else{
+    console.log("Cookies:", request.cookies);
     const regionId = request.params.id;
     const productionId = request
     .params.productionid;
@@ -112,6 +143,7 @@ const region = {
 
     theatreStore.editProduction(regionId, productionId, uptadedProduction);
     response.redirect('/region/' + regionId);
+  }
   },
 };
 

@@ -10,8 +10,9 @@
 
     <!-- First half of statistics -->
     <div class="sixteen wide column">
-      <div class="ui three statistics">
+      <div class="ui four statistics">
 
+        <!-- Display regions -->
         <div class="ui statistic">
           <div class="value">
             <i class="map marker alternate icon"></i>
@@ -21,6 +22,7 @@
           </div>
         </div>
 
+        <!-- Display productions -->
         <div class="ui red statistic">
           <div class="value">
             <i class="ticket icon"></i>
@@ -30,14 +32,26 @@
           </div>
         </div>
 
+        <!-- Display average productions per region -->
+
         <div class="ui blue statistic">
           <div class="value">
             <i class="chart bar icon"></i>
           </div>
           <div class="label">
-            Avg productions per region: {{displayAverage}}
+            Average productions per region: <br> {{displayAverage}}
           </div>
         </div>
+
+        <!-- Display number of users -->
+        <div class="ui blue statistic">
+          <div class="value">
+            <i class="user orange icon"></i>
+          </div>
+          <div class="label">
+            Numbers of users: <br> {{displayNumUsers}}
+          </div>
+        </div>        
 
       </div>
     </div>
@@ -52,7 +66,7 @@
             <i class="star icon"></i>
           </div>
           <div class="label">
-            Highest Rated: {{highest}}
+            Highest Rated: <br> {{highest}}
             <br>
             <div class="ui list">
               {{#each displayFav}}
@@ -69,7 +83,7 @@
             <i class="chartline icon"></i>
           </div>
           <div class="label">
-            Average Rating: {{displayAvgRating}}
+            Average Rating: <br> {{displayAvgRating}}
           </div>
         </div>
 
@@ -79,7 +93,7 @@
             <i class="theater masks icon"></i>
           </div>
           <div class="label">
-            Most Productions in a Region: {{maxProductions}}
+            Most Productions in a Region: <br> {{maxProductions}}
           </div>
         </div>
 

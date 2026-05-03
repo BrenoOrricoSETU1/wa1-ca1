@@ -1,0 +1,20 @@
+{
+  "wishlistCollection": [
+    {
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "id": "41dce394-292c-479d-865e-7f5d82dbe650",
+      "title": "Blood Brothers",
+      "image": "/images/blood-brothers-dublin.png",
+      "venue": "Bord Gáis Energy Theatre",
+      "rating": 3
+    },
+    {
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "id": "a53ffd9e-ff0c-42be-88da-d3d8c6426ee4",
+      "title": "Priscilla",
+      "image": "/images/priscilla-dublin.png",
+      "venue": "Bord Gáis Energy Theatre",
+      "rating": 3
+    }
+  ]
+}

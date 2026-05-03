@@ -1,0 +1,47 @@
+{{> menu id="wishlist"}}
+
+<section class="ui segment">
+
+  <h2>Your Wishlist</h2>
+
+  {{#if wishlist.length}}
+
+  <div class="ui four cards">
+
+    {{#each wishlist}}
+
+    <div class="card">
+
+      <div class="image">
+        <img src="{{image}}" alt="{{title}}">
+      </div>
+
+      <div class="content">
+        <div class="header">{{title}}</div>
+        <div class="meta">{{venue}}</div>
+      </div>
+
+      <div class="extra content">
+        Rating:
+        <div class="ui yellow rating" data-rating="{{rating}}" data-max-rating="5"></div>
+      </div>
+
+      <div class="extra content">
+        <a href="/wishlist/delete/{{id}}">
+          <i class="trash icon"></i>
+        </a>
+      </div>
+
+    </div>
+
+    {{/each}}
+
+  </div>
+
+  {{else}}
+
+  <p>No productions in your wishlist yet. Start adding it!</p>
+
+  {{/if}}
+
+</section>

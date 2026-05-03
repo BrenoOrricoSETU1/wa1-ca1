@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "firstName": "chritine",
+      "lastName": "daae",
+      "email": "christine@daae.com",
+      "password": "secret",
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+    },
+    {
+      "firstName": "meg",
+      "lastName": "giry",
+      "email": "meg@giry.com",
+      "password": "secret",
+      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+    },
+    {
+      "firstName": "admin",
+      "lastName": "user",
+      "email": "admin@test.com",
+      "password": "admin",
+      "id": "admin-id",
+      "isAdmin": true
+    },
+    {
+      "firstName": "Breno",
+      "lastName": "Orrico",
+      "email": "breno@orrico.com",
+      "password": "123",
+      "id": "75bd5182-271a-4869-be74-688f8f5f720d"
+    }
+  ]
+}

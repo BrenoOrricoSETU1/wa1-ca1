@@ -2,14 +2,24 @@
 
 import logger from "../utils/logger.js";
 import theatreStore from "../models/theatre-store.js";
+import accounts from "./accounts.js";
+import userStore from "../models/user-store.js";
 
 const stats = {
   createView(request, response) {
+
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    if(loggedInUser){
+
     logger.info("Stats page loading!");
 
     const regions = theatreStore.getAllRegions();
 
     const numRegions = regions.length;
+
+    const users = userStore.getAllUsers();
+    const numUsers = users.length;
 
     const numProductions = regions.reduce(
       (total, region) => total + region.productions.length,
@@ -55,16 +65,21 @@ const stats = {
       highest: maxRating,
       displayFav: favTitles,
       maxProductions: maxProductions,
-      topRegions: topRegionNames
+      topRegions: topRegionNames,
+      displayNumUsers: numUsers,
     };
 
     const viewData = {
       title: "Theatre Statistics",
       stats: statistics,
+      fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
     };
 
     response.render("stats", viewData);
-  },
+  } else{
+    response.redirect('/');
+  }
+ },
 };
 
 export default stats;

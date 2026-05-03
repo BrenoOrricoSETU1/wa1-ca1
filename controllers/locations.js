@@ -6,20 +6,28 @@
 import logger from "../utils/logger.js";
 import appStore from "../models/app-store.js";
 import { v4 as uuidv4 } from 'uuid';
+import accounts from "./accounts.js";
 
 
 const locations = {
     createView(request, response){
+
+        const loggedInUser = accounts.getCurrentUser(request);
+        if(loggedInUser){
         logger.info("Locations page loading.");
 
         const viewData = {
             title: "Locations",
             id: "locaitons",
+            fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
             info: appStore.getAppInfo()
         };
 
         response.render("locations", viewData);
+    } else{
+        response.redirect('/');
     }
+ }
 };
 
 export default locations;

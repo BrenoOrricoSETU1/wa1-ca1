@@ -84,21 +84,33 @@
         <div class="extra content">
           {{genre}}
         </div>
+
+        <div class="extra content"> 
+          <form action="/wishlist/add" method="POST">
+          <input type="hidden" name="title" value="{{title}}">
+          <input type="hidden" name="image" value="{{image}}">
+          <input type="hidden" name="venue" value="{{venue}}">
+          <input type="hidden" name="rating" value="{{rating}}">
+          <button class="ui tiny orange button">Add to Wishlist</button>
+          </form>
+        </div>
           
 
+        <!--DELETE BUTTON - only ADMIN can see it-->
+        {{#if @root.isAdmin}}
         <div class="extra content">
           <a href="/region/{{../id}}/deleteproduction/{{id}}" title="Delete">
           <i class="ui grey trash icon"></i>
           </a>
         </div>
+        {{/if}}
 
+        {{#if @root.isAdmin}}
         <div class="extra content edit-mode hide">
-
         <!-- Edit buttom (that will be only available for the ADM soon) -->
         <button onclick="this.nextElementSibling.style.display='block'" class="ui tiny button">
           Edit
         </button>
-
         <!-- Hidden edit form -->
         <form 
           action="/region/{{../id}}/updateproduction/{{id}}" 
@@ -124,19 +136,21 @@
           <button type="submit" class="ui mini button">Save</button>
 
         </form>
-      
       </div>
 
-      </div>
+      {{/if}}
+
+    </div>
 
     {{/each}}
   </div>
 </section>
 
+{{#if @root.isAdmin}}
 <section class="ui center aligned segment">
   {{> addproduction id=this.id}}
 </section>
-
+{{/if}}
 {{/with}}
 
 {{> footer}}

@@ -108,13 +108,13 @@
           "image": "/images/priscilla-dublin.png"
         },
         {
-          "id": "953aaa2c-383e-421a-854f-829ce1f064a0",
-          "title": "testing the tes",
-          "venue": "test",
-          "description": "test",
-          "genre": "test",
-          "image": "test",
-          "date": "2026-04-15",
+          "id": "8bcd832c-258a-4929-ba96-489b81e9015f",
+          "title": "Testing",
+          "venue": "Test",
+          "description": "testing if works",
+          "genre": "Drama",
+          "image": "image",
+          "date": "2026-05-03T21:19:08.961Z",
           "rating": 5
         }
       ]
