@@ -9,7 +9,12 @@ import { v4 as uuidv4 } from 'uuid';
 const region = {
   createView(request, response) {
     const regionId = request.params.id;
+    const searchTerm = request.query.searchTerm || "";
     logger.info(`Region page loading: ${regionId}`);
+
+    //Sorting method
+    const sortField = request.query.sort;
+    const order = request.query.order === "desc" ? -1 : 1;
 
     const regionData = theatreStore.getRegionById(regionId);
 
@@ -19,15 +24,45 @@ const region = {
       return;
     }
 
-    // Add a highlight for THE PHANTOM OF THE OPERA
     
-    //Here this funcion will loop throught every item in the production array, looking for the one located in 'london' and has the 'phantom' included in the name. Ignoring the upper cases with the funcion 'toLowerCase(). Once the 'p' (production) is found. It will highlight it
-    const productions = regionData.productions.map(p => ({...p, highlight: regionId === "london" && p.title.toLowerCase().includes("phantom")}));
+    //Search method
+    let productions = searchTerm ? theatreStore.searchProductions(regionId, searchTerm) : regionData.productions;
+
+    //Sorting method
+    let sorted = productions;
+
+    if(sortField){
+      sorted = productions.slice().sort((a,b) => {
+        if(sortField === "title"){
+          return a.title.localeCompare(b.title) * order;
+        }
+        if(sortField === "rating"){
+          return (a.rating - b.rating) * order;
+        }
+
+        return 0;
+      });
+    }
+
+    //Keep the highlight on the Phantom
+    productions = productions.map(p => ({...p, highlight:
+      regionId === "london" && p.title.toLowerCase().includes("phantom")
+    }));
 
     const viewData = {
       title: regionData.name,
       info: appStore.getAppInfo(),
-      region: regionData
+      region: {
+        id: regionData.id,
+        name: regionData.name,
+        productions: sortField ? sorted : productions
+      },
+      search: searchTerm,
+      
+      titleSelected: request.query.sort === "title",
+      ratingSelected: request.query.sort === "rating",
+      ascSelected: request.query.order === "asc",
+      descSelected: request.query.order === "desc",
     };
 
     response.render("region", viewData);

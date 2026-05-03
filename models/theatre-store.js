@@ -44,6 +44,15 @@ const theatreStore = {
   //updating production
   editProduction(regionId, productionId, uptadedProduction){
     this.store.editItem("regions", regionId, productionId, "productions", uptadedProduction);
+  },
+
+  //searching for production
+  searchProductions(regionId, search){
+    const region = this.getRegionById(regionId);
+
+    if(!region) return [];
+
+    return region.productions.filter(p => p.title.toLowerCase().includes(search.toLowerCase()));
   }
 };
 

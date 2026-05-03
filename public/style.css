@@ -274,3 +274,10 @@ footer.ui.segment {
 table {
   margin: auto;
 }
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
