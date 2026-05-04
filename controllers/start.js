@@ -19,6 +19,7 @@ const start = {
       id: "home",
       info: appStore.getAppInfo(),
       fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
+      picture: loggedInUser.picture,
       productions: theatreStore.getFeatured()
     };
     

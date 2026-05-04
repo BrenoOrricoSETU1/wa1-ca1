@@ -16,6 +16,7 @@ const wishlist = {
             const viewData = {
                 title: "Your Wishlist",
                 fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
+                picture: loggedInUser.picture,
                 wishlist: items
             };
             response.render('wishlist', viewData);

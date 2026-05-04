@@ -6,7 +6,12 @@
   </header>
   
   <div class="right menu">
-    <span class="name">{{fullname}}</span>
+    <div class="item">
+      <span class="profpicture">
+      <img src="{{#if picture.url}}{{picture.url}}{{else}}/images/admin.png{{/if}}" class="ui avatar image centered aligned">     
+    </span>
+    </div>
+    <span class="name" c>{{fullname}}</span>     
     <a id="locations" class="item" href="/locations">Locations</a>
     <a id="wishlist" class="item" href="/wishlist">Wishlist</a>
     <a id="stats" class="item" href="/stats">Statistics</a>

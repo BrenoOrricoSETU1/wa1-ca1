@@ -20,7 +20,8 @@ const about = {
         const viewData = {
             title: "About",
             id: "about",
-             fullname: loggedInUser.firstName + " " + loggedInUser.lastName,            
+            fullname: loggedInUser.firstName + " " + loggedInUser.lastName,         
+            picture: loggedInUser.picture,
             info: appStore.getAppInfo()
         };
 

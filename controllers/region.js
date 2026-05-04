@@ -59,6 +59,7 @@ const region = {
       title: regionData.name,
       info: appStore.getAppInfo(),
       fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
+      picture: loggedInUser.picture,
       isAdmin: loggedInUser.isAdmin,
       region: {
         id: regionData.id,

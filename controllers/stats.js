@@ -73,6 +73,7 @@ const stats = {
       title: "Theatre Statistics",
       stats: statistics,
       fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
+      picture: loggedInUser.picture,
     };
 
     response.render("stats", viewData);

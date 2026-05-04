@@ -1,20 +1,6 @@
 {
   "users": [
     {
-      "firstName": "chritine",
-      "lastName": "daae",
-      "email": "christine@daae.com",
-      "password": "secret",
-      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
-    },
-    {
-      "firstName": "meg",
-      "lastName": "giry",
-      "email": "meg@giry.com",
-      "password": "secret",
-      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-    },
-    {
       "firstName": "admin",
       "lastName": "user",
       "email": "admin@test.com",
@@ -23,11 +9,26 @@
       "isAdmin": true
     },
     {
-      "firstName": "Breno",
-      "lastName": "Orrico",
-      "email": "breno@orrico.com",
-      "password": "123",
-      "id": "75bd5182-271a-4869-be74-688f8f5f720d"
+      "firstName": "Christine",
+      "lastName": "Daae",
+      "email": "christine@daae.com",
+      "password": "secret",
+      "id": "c6222b65-4df1-4db6-ab73-967aab1792de",
+      "picture": {
+        "url": "http://res.cloudinary.com/dprfysaji/image/upload/v1777904923/u8fkdh6h3fmxueomeci7.jpg",
+        "public_id": "u8fkdh6h3fmxueomeci7"
+      }
+    },
+    {
+      "firstName": "Raoul",
+      "lastName": "De Chagny",
+      "email": "raoul@dechagny.com",
+      "password": "secret",
+      "id": "e4bcbae9-e256-4b59-848b-c594d351445c",
+      "picture": {
+        "url": "http://res.cloudinary.com/dprfysaji/image/upload/v1777904971/kmjgungb8xoc04mau4lv.jpg",
+        "public_id": "kmjgungb8xoc04mau4lv"
+      }
     }
   ]
 }

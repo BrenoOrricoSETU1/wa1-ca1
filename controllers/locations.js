@@ -20,6 +20,7 @@ const locations = {
             title: "Locations",
             id: "locaitons",
             fullname: loggedInUser.firstName + " " + loggedInUser.lastName,
+            picture: loggedInUser.picture,
             info: appStore.getAppInfo()
         };
 
