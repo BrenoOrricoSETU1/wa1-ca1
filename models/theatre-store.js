@@ -1,6 +1,7 @@
 'use strict';
 
 import JsonStore from "./json-store.js";
+import logger from "../utils/logger.js";
 
 const theatreStore = {
   store: new JsonStore("./models/theatre-store.json", {
@@ -32,12 +33,40 @@ const theatreStore = {
   //After find it, instert the new prodcution into this array
   array: "productions",
 
-  addProduction(id, production){
-    this.store.addItem("regions", id, "productions", production);
+  async addProduction(regionId, production, file, response) {
+    try {
+      const regions = this.store.findAll("regions");
+      const region = regions.find(r => r.id === regionId);
+
+      production.image = await this.store.addToCloudinary(file);
+
+      region.productions.push(production);
+
+      await this.store.db.write();
+
+      response();
+    } catch (error) {
+      logger.error("Error processing production:", error);
+      response(error);
+    }
   },
 
   //deleting production
-  deleteProduction(regionId, productionId){
+  async deleteProduction(regionId, productionId) {
+    const region = this.getRegionById(regionId);
+    const production = region.productions.find(p => p.id === productionId);
+
+    // Delete from courdinary
+    if (production.image && production.image.public_id) {
+      try {
+        await this.store.deleteFromCloudinary(production.image.public_id);
+        logger.info("Cloudinary image deleted");
+      } catch (err) {
+        logger.error("Failed to delete Cloudinary image:", err);
+      }
+    }
+
+    // Remove from JSON
     this.store.removeItem("regions", regionId, "productions", productionId);
   },
 

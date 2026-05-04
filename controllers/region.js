@@ -100,12 +100,17 @@ const region = {
       date: timestamp,
       rating: parseInt(request.body.rating)
     };
-    theatreStore.addProduction(regionId, newProduction);
+    theatreStore.addProduction(
+      regionId, 
+      newProduction,
+      request.files.picture,
+    function(){
     response.redirect('/region/' + regionId);
-    }
-  },
+    });
+  }
+},
 
-  deleteProduction(request, response){
+  async deleteProduction(request, response){
     const loggedInUser = accounts.getCurrentUser(request);
 
     if(!loggedInUser || !loggedInUser.isAdmin){
@@ -113,7 +118,8 @@ const region = {
     } else{
     const regionId = request.params.id;
     const productionId = request.params.productionid;
-    theatreStore.deleteProduction(regionId, productionId);
+
+    await theatreStore.deleteProduction(regionId, productionId);
 
     response.redirect('/region/' + regionId);
     }
@@ -130,13 +136,16 @@ const region = {
     const productionId = request
     .params.productionid;
 
+    const region = theatreStore.getRegionById(regionId);
+    const existing = region.productions.find(p => p.id === productionId);
+
     const uptadedProduction = {
       id: productionId,
       title: request.body.title,
       venue: request.body.venue,
       description: request.body.description,
       genre: request.body.genre,
-      image: request.body.image,
+      image: existing.image,
       date: request.body.date,
       rating: parseInt(request.body.rating) || 0
     };

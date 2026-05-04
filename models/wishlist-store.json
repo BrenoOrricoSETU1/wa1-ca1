@@ -15,6 +15,14 @@
       "image": "/images/priscilla-dublin.png",
       "venue": "Bord Gáis Energy Theatre",
       "rating": 3
+    },
+    {
+      "userid": "admin-id",
+      "id": "8c9893f6-1d30-4ee0-92fc-857a0e5a82fd",
+      "title": "The Waitress",
+      "image": "/images/waitress-dublin.png",
+      "venue": "Bord Gáis Energy Theatre",
+      "rating": 4
     }
   ]
 }

@@ -106,16 +106,6 @@
           "location": "Dublin",
           "description": "A dazzling, high-energy musical adventure about friendship, identity, and self-expression. Packed with iconic pop hits, outrageous costumes, and spectacular performances, Priscilla is a joyful celebration that will have audiences dancing in their seats.",
           "image": "/images/priscilla-dublin.png"
-        },
-        {
-          "id": "8bcd832c-258a-4929-ba96-489b81e9015f",
-          "title": "Testing",
-          "venue": "Test",
-          "description": "testing if works",
-          "genre": "Drama",
-          "image": "image",
-          "date": "2026-05-03T21:19:08.961Z",
-          "rating": 5
         }
       ]
     }

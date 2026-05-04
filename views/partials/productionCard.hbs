@@ -1,0 +1,82 @@
+<div class="ui card production-card {{#if highlight}}highlight-gold{{/if}}">
+
+  <div class="image">
+    <img src="{{#if image.url}}{{image.url}}{{else}}{{image}}{{/if}}" alt="{{title}}">
+  </div>
+
+  <div class="content">
+    <div class="header">{{uppercase title}}</div>
+    <div class="meta">{{venue}}</div>
+    <div class="description">{{description}}</div>
+  </div>
+
+  <div class="extra content">
+    <i class="calendar alternate outline icon"></i>
+    {{#if date}}
+      {{formatDate date}}
+    {{/if}}
+  </div>
+
+  {{#if rating}}
+  <div class="extra content">
+    <span
+      class="ui yellow disabled rating"
+      data-rating="{{rating}}"
+      data-max-rating="5">
+    </span>
+    <br>
+    <span style="color: grey; font-size: 90%; font-style: italic">
+      {{highlightPopular rating}}
+    </span>
+  </div>
+  {{/if}}
+
+  <div class="extra content">
+    {{genre}}
+  </div>
+
+  <div class="extra content">
+    <form action="/wishlist/add" method="POST">
+      <input type="hidden" name="title" value="{{title}}">
+      <input type="hidden" name="image" value="{{#if image.url}}{{image.url}}{{else}}{{image}}{{/if}}">
+      <input type="hidden" name="venue" value="{{venue}}">
+      <input type="hidden" name="rating" value="{{rating}}">
+      <button class="ui tiny orange button">Add to Wishlist</button>
+    </form>
+  </div>
+
+  {{#if @root.isAdmin}}
+  <div class="extra content">
+    <a href="/region/{{regionId}}/deleteproduction/{{id}}">
+      <i class="ui grey trash icon"></i>
+    </a>
+  </div>
+
+  <div class="extra content">
+    <button onclick="this.nextElementSibling.style.display='block'" class="ui tiny button">
+      Edit
+    </button>
+
+    <form 
+      action="/region/{{regionId}}/updateproduction/{{id}}" 
+      method="POST"
+      style="display:none; margin-top: 10px;"
+    >
+      <label>Title</label>
+      <input type="text" name="title" value="{{title}}" required>
+      <label>Venue</label>
+      <input type="text" name="venue" value="{{venue}}" required>
+      <label>Required</label>
+      <input type="text" name="description" value="{{description}}" required>
+      <label>Genre</label>
+      <input type="text" name="genre" value="{{genre}}">
+      <label>Date</label>
+      <input type="date" name="date" value="{{date}}">
+      <label>Rating</label>
+      <input type="number" name="rating" value="{{rating}}">
+      <button type="submit" class="ui mini button">Save</button>
+    </form>
+  </div>
+  {{/if}}
+
+</div>
